@@ -10,12 +10,7 @@
 <script>
 export default {
   name: 'channel',
-  props: ['channelname'],
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
+  props: ['channelname']
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

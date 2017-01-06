@@ -28,6 +28,7 @@ export default {
           msg: this.input
         }
         this.$emit('message', message)
+        this.input = ''
       }
     }
   }

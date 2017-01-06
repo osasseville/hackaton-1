@@ -8,20 +8,30 @@
 <script>
 import MessageBoard from './MessageBoard'
 import ChatBox from './ChatBox'
+import firebase from 'firebase'
 
 export default {
   name: 'chatroom',
   props: [
     'channelKey',
     'userData',
-  ]
+    'messages'
+  ],
   components: {
     MessageBoard,
     ChatBox
   },
   methods: {
     chatFlag (message) {
+      message.key = this.channelKey
       this.$emit('message', message)
+    }
+  },
+  watch: {
+    channelKey () {
+      this.$bindAsObject(
+        'channel',
+        firebase.database().ref(`channels/${this.channelKey}`))
     }
   }
 }

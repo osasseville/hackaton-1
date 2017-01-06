@@ -18,6 +18,7 @@ import Message from './Message'
 
 export default {
   name: 'messageboard',
+  props: ['channelKey', 'userData', 'messages'],
   data () {
     return {
       listOfMessages: [

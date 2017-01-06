@@ -6,7 +6,7 @@
     <div class="channels">
       <channels />
     </div>
-    <div class="chatroom"><chatroom></chatroom></div>
+    <div class="chatroom"><chatroom @message="showMessage"></chatroom></div>
   </div>
 </template>
 
@@ -21,6 +21,11 @@ export default {
     Chatroom,
     Channels,
     LoginButton
+  },
+  methods: {
+    showMessage (message) {
+      window.alert(message.msg)
+    }
   }
 }
 </script>
