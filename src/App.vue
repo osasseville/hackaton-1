@@ -3,10 +3,12 @@
     <div class="login-button">
       <login-button />
     </div>
-    <div class="channels">
-      <channels />
+    <div class="channels" >
+      <channels @channelSelected="onChannelSelected" />
     </div>
-    <div class="chatroom"><chatroom></chatroom></div>
+    <div class="chatroom" v-if="channelKey">
+      <chatroom @message="showMessage" :channelKey="channelKey" />
+    </div>
   </div>
 </template>
 
@@ -21,6 +23,19 @@ export default {
     Chatroom,
     Channels,
     LoginButton
+  },
+  data () {
+    return {
+      channelKey: null
+    }
+  },
+  methods: {
+    showMessage (message) {
+      window.alert(message.msg)
+    },
+    onChannelSelected (key) {
+      this.channelKey = key
+    }
   }
 }
 </script>

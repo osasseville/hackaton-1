@@ -1,11 +1,14 @@
 <template>
   <div>
-    <h1>chatbox</h1>
-    <md-input-container>
-      <label>Send a message...</label>
-      <md-textarea v-model="input" id="textarea"> </md-textarea>
-      <md-button id="md-button" v-on:click="send" class="md-raised md-dense">SEND</md-button>
-    </md-input-container>
+    <md-card>
+      <div class="md-title">Chatbox</div>
+      <form novalidate @submit.stop.prevent="send">
+        <md-input-container md-inline>
+          <label>Send a message...</label>
+          <md-input v-model="input" id="textarea" />
+        </md-input-container>
+      </form>
+    </md-card>
   </div>
 </template>
 
@@ -21,11 +24,11 @@ export default {
     send () {
       if (this.input !== '') {
         var message = {
-          username: 'bob',
-          timestamp: new Date(),
-          msg: this.input
+          author: 'bob',
+          message: this.input
         }
         this.$emit('message', message)
+        this.input = ''
       }
     }
   }

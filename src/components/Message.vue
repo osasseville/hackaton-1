@@ -1,9 +1,9 @@
 <template>
   <p>
-    <md-card-header id="messageCard">
-    <div class="md-title"> {{ msg }} </div>
-    <div class="md-subhead"> {{ username }} {{ timestamp}} </div>
-  </md-card-header>
+    <md-card-content id="messageCard">
+      <div class="md-content"> {{ msg }} </div>
+      <div class="md-subhead"> {{ username }} {{ timestamp}} </div>
+    </md-card-content>
   </p>
 </template>
 

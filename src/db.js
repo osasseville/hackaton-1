@@ -33,6 +33,4 @@ const createMessage = (channelKey, author, message) =>
     })
     .then(a, r))
 
-window.createMessage = createMessage
-
 export { login, channelsRef, createChannel, createMessage }
