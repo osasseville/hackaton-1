@@ -1,38 +1,31 @@
 <template>
   <div>
     <md-card>
-      <md-card-area md-inset>
+      <md-card-area>
         <div class="md-title">Message Board</div>
         <ul>
-          <li id="messages" v-for="message in listOfMessages">
-            <message v-bind:username="message.username" v-bind:timestamp="message.timestamp" v-bind:msg="message.msg"></message>
+          <li id="messages" v-for="(message, key) of messages">
+            <message
+              v-bind:username="message.author"
+              v-bind:msg="message.message" />
           </li>
         </ul>
       </md-card-area>
     </md-card>
   </div>
 </template>
-
 <script>
 import Message from './Message'
-
 export default {
   name: 'messageboard',
-  props: ['channelKey', 'userData', 'messages'],
+  props: ['messages'],
   data () {
     return {
-      listOfMessages: [
-        {
-          username: 'wai',
-          timestamp: new Date(),
-          msg: 'amanda'
-        },
-        {
-          username: 'lau',
-          timestamp: new Date(),
-          msg: 'wai'
-        }
-      ]
+      listOfMessages: []
+    }
+  },
+  computed: {
+    sortedMessages () {
     }
   },
   components: {

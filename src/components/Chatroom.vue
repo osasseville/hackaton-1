@@ -1,6 +1,7 @@
 <template>
   <div>
-    <message-board id="message-board"></message-board>
+    <message-board
+      v-if="channel" id="message-board" :messages="channel.message"></message-board>
     <chat-box @message="chatFlag" id="chat-box"></chat-box>
   </div>
 </template>
@@ -14,24 +15,35 @@ export default {
   name: 'chatroom',
   props: [
     'channelKey',
-    'userData',
-    'messages'
+    'userData'
   ],
   components: {
     MessageBoard,
     ChatBox
   },
+  data () {
+    return {
+      channel: null
+    }
+  },
   methods: {
     chatFlag (message) {
       message.key = this.channelKey
       this.$emit('message', message)
+    },
+    refreshChannel () {
+      this.$bindAsObject(
+        'channel',
+        firebase.database().ref(`channels/${this.channelKey}`)
+      )
     }
+  },
+  mounted () {
+    this.refreshChannel()
   },
   watch: {
     channelKey () {
-      this.$bindAsObject(
-        'channel',
-        firebase.database().ref(`channels/${this.channelKey}`))
+      this.refreshChannel()
     }
   }
 }

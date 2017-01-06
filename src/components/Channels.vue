@@ -25,7 +25,8 @@ export default {
     return {
       channelList: [
         {
-          name: 'fake'
+          name: 'fake',
+          channelKey: '-K_p5iMytWMwOtS2804W'
         }
       ]
     }

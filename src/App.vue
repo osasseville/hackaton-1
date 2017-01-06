@@ -6,7 +6,9 @@
     <div class="channels">
       <channels />
     </div>
-    <div class="chatroom"><chatroom @message="showMessage"></chatroom></div>
+    <div class="chatroom">
+      <chatroom @message="showMessage" channelKey="-K_p5iMytWMwOtS2804W" />
+    </div>
   </div>
 </template>
 
