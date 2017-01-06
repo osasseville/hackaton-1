@@ -8,7 +8,8 @@
   </md-toolbar>
 
   <md-list class="md-transparent">
-    <channel v-for="channel in channelList" :channelname="channel.name" />
+    <channel v-for="channel in channelList" :channelName="channel.name" :channelKey="channel['.key']"
+    @channelSelected="onSelectChannel"/>
       <!--put channels here-->
   </md-list>
 </md-whiteframe>
@@ -18,20 +19,27 @@
 <script>
 import Channel from './Channel.vue'
 import AddButton from './AddButton.vue'
+import { channelsRef, createChannel } from '../db'
 
 export default {
   name: 'channels',
+  firebase: {
+    channelList: channelsRef
+  },
   data () {
-    return {
-      channelList: []
-    }
+    return {}
   },
   components: {
     Channel, AddButton
   },
   methods: {
     addChannel (name) {
-      this.channelList.push({ name })
+      createChannel(name)
+      .then(
+        key => this.$emit('channelSelected', key))
+    },
+    onSelectChannel (key) {
+      this.$emit('channelSelected', key)
     }
   }
 }
