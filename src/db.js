@@ -22,6 +22,15 @@ const createChannel = (name) =>
     channelsRef.push({ name })
     .then((x) => a(x.key), r))
 
-window.createChannel = createChannel
+const createMessage = (channelKey, author, message) =>
+  new Promise((a, r) =>
+    channelsRef.child(channelKey).child('message').push({
+      author,
+      message,
+      date: new Date()
+    })
+    .then(a, r))
 
-export { login, channelsRef, createChannel }
+window.createMessage = createMessage
+
+export { login, channelsRef, createChannel, createMessage }
