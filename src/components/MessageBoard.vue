@@ -39,5 +39,11 @@ export default {
 <style scoped>
 #MessageBoard{
   border: 5px solid red;
+  list-style: none;
 }
+#messages{
+  list-style: none; 
+}
+
+
 </style>

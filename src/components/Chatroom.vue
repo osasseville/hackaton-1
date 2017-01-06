@@ -1,7 +1,7 @@
 <template>
   <div>
     <message-board id="message-board"></message-board>
-    <chat-box id="chat-box"></chat-box>
+    <chat-box @message="chatFlag" id="chat-box"></chat-box>
   </div>
 </template>
 
@@ -11,11 +11,14 @@ import ChatBox from './ChatBox'
 
 export default {
   name: 'chatroom',
-  data () {
-  },
   components: {
     MessageBoard,
     ChatBox
+  },
+  methods: {
+    chatFlag (message) {
+      this.$emit('message', message)
+    }
   }
 }
 </script>

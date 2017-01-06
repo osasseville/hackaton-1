@@ -3,8 +3,8 @@
     <h1>chatbox</h1>
     <md-input-container>
       <label>Send a message...</label>
-      <md-textarea id="textarea"> </md-textarea>
-      <md-button id="md-button" @click="send" class="md-raised md-dense">SEND</md-button>
+      <md-textarea v-model="input" id="textarea"> </md-textarea>
+      <md-button id="md-button" v-on:click="send" class="md-raised md-dense">SEND</md-button>
     </md-input-container>
   </div>
 </template>
@@ -13,9 +13,20 @@
 export default {
   name: 'chatbox',
   data () {
+    return {
+      input: ''
+    }
   },
   methods: {
     send () {
+      if (this.input !== '') {
+        var message = {
+          username: 'bob',
+          timestamp: new Date(),
+          msg: this.input
+        }
+        this.$emit('message', message)
+      }
     }
   }
 }
