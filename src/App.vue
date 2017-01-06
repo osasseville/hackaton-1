@@ -3,11 +3,11 @@
     <div class="login-button">
       <login-button />
     </div>
-    <div class="channels">
-      <channels />
+    <div class="channels" >
+      <channels @channelSelected="onChannelSelected" />
     </div>
     <div class="chatroom">
-      <chatroom @message="showMessage" channelKey="-K_p5iMytWMwOtS2804W" />
+      <chatroom @message="showMessage" :channelKey="channelKey" />
     </div>
   </div>
 </template>
@@ -24,9 +24,17 @@ export default {
     Channels,
     LoginButton
   },
+  data () {
+    return {
+      channelKey: null
+    }
+  },
   methods: {
     showMessage (message) {
       window.alert(message.msg)
+    },
+    onChannelSelected (key) {
+      this.channelKey = key
     }
   }
 }
