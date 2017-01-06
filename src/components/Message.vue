@@ -9,15 +9,15 @@
 <script>
 export default {
   name: 'message',
-  data () {
-    return {
-      username: 'wai',
-      timestamp: new Date(),
-      msg: 'amanda'
-    }
-  }
+  props: [
+    'username',
+    'timestamp',
+    'msg'
+  ],
+  data () {}
 }
 </script>
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
