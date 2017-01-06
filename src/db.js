@@ -9,9 +9,17 @@ const config = {
 }
 firebase.initializeApp(config)
 const provider = new firebase.auth.FacebookAuthProvider()
+const db = firebase.database()
 
 const login = () => {
   return firebase.auth().signInWithPopup(provider)
 }
 
-export { login }
+const createChannel = (name) =>
+  new Promise((a, r) =>
+    db.ref().child('channels').push({ name })
+    .then((x) => a(x.key), r))
+
+window.createChannel = createChannel
+
+export { login, createChannel }
