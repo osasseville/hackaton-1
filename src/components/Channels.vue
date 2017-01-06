@@ -1,6 +1,6 @@
 <template>
 
-<md-whiteframe md-elevation="2">
+<md-whiteframe>
   <md-toolbar class="md-transparent">
 
     <add-button @newChannel="addChannel"></add-button>
@@ -23,7 +23,7 @@ export default {
   name: 'channels',
   data () {
     return {
-      channelList: [{ name: 'test' }]
+      channelList: []
     }
   },
   components: {

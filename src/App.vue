@@ -1,27 +1,45 @@
 <template>
   <div id="app">
-    <channels></channels>
+    <div class="login-button">
+      <login-button />
+    </div>
+    <div class="channels">
+      <channels />
+    </div>
+    <div class="chatroom">Chatroom</div>
   </div>
 </template>
 
 <script>
+import LoginButton from './components/LoginButton'
 import Channels from './components/Channels'
 
 export default {
   name: 'app',
   components: {
-    Channels
+    Channels,
+    LoginButton
   }
 }
 </script>
-
 <style>
+html, body, #app {
+  height: 100%;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  align-items: stretch;
+}
+.login-button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.channels {
+  width: 215px;
+  padding: 10px;
+}
+.chatroom {
+  flex-grow: 1;
 }
 </style>

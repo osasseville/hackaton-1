@@ -1,6 +1,8 @@
 <template lang="html">
   <div>
-  <md-button class="md-primary md-raised" @click="openDialog('dialog6')">+</md-button>
+    <md-button class="md-primary md-raised" @click="openDialog('dialog6')">
+      CREATE CHANNEL
+    </md-button>
     <md-dialog-prompt
       md-input-id="add-channel-dialog"
       :md-title="prompt.title"
