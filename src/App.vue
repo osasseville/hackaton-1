@@ -6,17 +6,19 @@
     <div class="channels">
       <channels />
     </div>
-    <div class="chatroom">Chatroom</div>
+    <div class="chatroom"><chatroom></chatroom></div>
   </div>
 </template>
 
 <script>
+import Chatroom from './components/Chatroom'
 import LoginButton from './components/LoginButton'
 import Channels from './components/Channels'
 
 export default {
   name: 'app',
   components: {
+    Chatroom,
     Channels,
     LoginButton
   }
@@ -27,6 +29,12 @@ html, body, #app {
   height: 100%;
 }
 #app {
+  border-style: solid;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
   display: flex;
   align-items: stretch;
 }
