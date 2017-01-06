@@ -1,7 +1,7 @@
 <template>
   <div>
-    <message-board></message-board>
-    <chat-box></chat-box>
+    <message-board id="message-board"></message-board>
+    <chat-box id="chat-box"></chat-box>
   </div>
 </template>
 
@@ -20,6 +20,13 @@ export default {
 }
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
+<style>
+#message-board {
+  border-style: solid;
+  border-color: green;
+}
+#chat-box {
+  border-style: solid;
+  border-color: orange;
+}
 </style>

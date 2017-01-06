@@ -1,5 +1,11 @@
 <template>
-  <h1>chatbox</h1>
+  <div>
+    <h1>chatbox</h1>
+    <md-input-container>
+      <label>Send a message...</label>
+      <md-textarea></md-textarea>
+    </md-input-container>
+  </div>
 </template>
 
 <script>
