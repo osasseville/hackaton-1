@@ -1,16 +1,23 @@
 <template>
   <div id="app">
-    <div class="login-button"><LoginButton /></div>
-    <div class="channels">Channels</div>
+    <div class="login-button">
+      <login-button />
+    </div>
+    <div class="channels">
+      <channels />
+    </div>
     <div class="chatroom">Chatroom</div>
   </div>
 </template>
 
 <script>
 import LoginButton from './components/LoginButton'
+import Channels from './components/Channels'
+
 export default {
   name: 'app',
   components: {
+    Channels,
     LoginButton
   }
 }
@@ -29,10 +36,10 @@ html, body, #app {
   top: 10px;
 }
 .channels {
-  width: 150px;
+  width: 215px;
+  padding: 10px;
 }
 .chatroom {
   flex-grow: 1;
-  border-left: 1px solid black;
 }
 </style>
