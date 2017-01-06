@@ -1,5 +1,9 @@
 <template>
-  <h1>a message</h1>
+  <p>
+    <strong>{{ username }} </strong>
+    <em>{{ timestamp }}:   </em>
+    {{ msg }}
+  </p>
 </template>
 
 <script>
@@ -7,6 +11,11 @@ export default {
   name: 'message',
   data () {
 
+    return {
+      username: 'wai',
+      timestamp: new Date(),
+      msg: 'amanda'
+    }
   }
 }
 </script>

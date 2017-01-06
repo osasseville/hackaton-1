@@ -11,6 +11,9 @@ import Message from './Message'
 export default {
   name: 'messageboard',
   data () {
+    return {
+      listOfMessages: []
+    }
   },
   components: {
     Message
