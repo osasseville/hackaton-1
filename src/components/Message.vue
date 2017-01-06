@@ -6,6 +6,7 @@
 export default {
   name: 'message',
   data () {
+
   }
 }
 </script>
