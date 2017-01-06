@@ -7,7 +7,7 @@
           <li id="messages" v-for="(message, key) of messages">
             <message
               v-bind:username="message.author"
-              v-bind:msg="message.message" />
+              v-bind:msg="message.message.message" />
           </li>
         </ul>
       </md-card-area>

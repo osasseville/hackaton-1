@@ -6,7 +6,7 @@
     <div class="channels" >
       <channels @channelSelected="onChannelSelected" />
     </div>
-    <div class="chatroom">
+    <div class="chatroom" v-if="channelKey">
       <chatroom @message="showMessage" :channelKey="channelKey" />
     </div>
   </div>

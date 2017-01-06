@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import { createMessage } from '../db'
 import MessageBoard from './MessageBoard'
 import ChatBox from './ChatBox'
 import firebase from 'firebase'
@@ -28,8 +29,7 @@ export default {
   },
   methods: {
     chatFlag (message) {
-      message.key = this.channelKey
-      this.$emit('message', message)
+      createMessage(this.channelKey, 'anonymous', message)
     },
     refreshChannel () {
       this.$bindAsObject(
