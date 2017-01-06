@@ -15,11 +15,13 @@ const login = () => {
   return firebase.auth().signInWithPopup(provider)
 }
 
+const channelsRef = db.ref().child('channels')
+
 const createChannel = (name) =>
   new Promise((a, r) =>
-    db.ref().child('channels').push({ name })
+    channelsRef.push({ name })
     .then((x) => a(x.key), r))
 
 window.createChannel = createChannel
 
-export { login, createChannel }
+export { login, channelsRef, createChannel }
