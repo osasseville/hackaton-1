@@ -23,7 +23,11 @@ export default {
   name: 'channels',
   data () {
     return {
-      channelList: []
+      channelList: [
+        {
+          name: 'fake'
+        }
+      ]
     }
   },
   components: {
