@@ -1,28 +1,30 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <div class="channels">Channels</div>
+    <div class="chatroom">Chatroom</div>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
-
 export default {
   name: 'app',
   components: {
-    Hello
   }
 }
 </script>
-
 <style>
+html, body, #app {
+  height: 100%;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+  align-items: stretch;
+}
+.channels {
+  width: 150px;
+}
+.chatroom {
+  flex-grow: 1;
+  border-left: 1px solid black;
 }
 </style>
