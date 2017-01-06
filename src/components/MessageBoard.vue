@@ -1,7 +1,11 @@
 <template>
   <div>
     <h1>message-board</h1>
-    <message></message>
+    <ul>
+      <li id="messages" v-for="message in listOfMessages">
+        <message v-bind:username="message.username" v-bind:timestamp="message.timestamp" v-bind:msg="message.msg"></message>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -12,7 +16,18 @@ export default {
   name: 'messageboard',
   data () {
     return {
-      listOfMessages: []
+      listOfMessages: [
+        {
+          username: 'wai',
+          timestamp: new Date(),
+          msg: 'amanda'
+        },
+        {
+          username: 'lau',
+          timestamp: new Date(),
+          msg: 'wai'
+        }
+      ]
     }
   },
   components: {
@@ -25,6 +40,4 @@ export default {
 #MessageBoard{
   border: 5px solid red;
 }
-
-
 </style>
