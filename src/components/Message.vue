@@ -10,7 +10,6 @@
 export default {
   name: 'message',
   data () {
-
     return {
       username: 'wai',
       timestamp: new Date(),
