@@ -20,8 +20,19 @@ const channelsRef = db.ref().child('channels')
 const createChannel = (name) =>
   new Promise((a, r) =>
     channelsRef.push({ name })
-    .then((x) => a(x.key), r))
+    .then(
+      (x) => a(x.key),
+      r))
 
-window.createChannel = createChannel
+const createMessage = (channelKey, author, message) =>
+  new Promise((a, r) =>
+    channelsRef.child(channelKey).child('message').push({
+      author,
+      message,
+      time: firebase.database.ServerValue.TIMESTAMP
+    })
+    .then(a, r))
 
-export { login, channelsRef, createChannel }
+window.createMessage = createMessage
+
+export { login, channelsRef, createChannel, createMessage }
