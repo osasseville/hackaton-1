@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <md-button class="md-raised md-primary" d>Test button</md-button>
   </div>
 </template>
 
@@ -8,7 +9,6 @@
 export default {
   name: 'hello',
   data () {
-    thistes;
     return {
       msg: 'Welcome to Your Vue.js App'
     }
