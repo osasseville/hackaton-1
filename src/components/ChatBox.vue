@@ -1,11 +1,13 @@
 <template>
   <div>
-    <h1>chatbox</h1>
-    <md-input-container>
-      <label>Send a message...</label>
-      <md-textarea v-model="input" id="textarea"> </md-textarea>
-      <md-button id="md-button" v-on:click="send" class="md-raised md-dense">SEND</md-button>
-    </md-input-container>
+    <md-card>
+      <div class="md-title">Chatbox</div>
+      <md-input-container>
+        <label>Send a message...</label>
+        <md-textarea v-model="input" id="textarea"> </md-textarea>
+        <md-button id="md-button" v-on:click="send" class="md-raised md-primary">SEND</md-button>
+      </md-input-container>
+    </md-card>
   </div>
 </template>
 

@@ -11,6 +11,10 @@ import ChatBox from './ChatBox'
 
 export default {
   name: 'chatroom',
+  props: [
+    'channelKey',
+    'userData',
+  ]
   components: {
     MessageBoard,
     ChatBox
@@ -24,12 +28,4 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-#message-board {
-  border-style: solid;
-  border-color: green;
-}
-#chat-box {
-  border-style: solid;
-  border-color: orange;
-}
 </style>

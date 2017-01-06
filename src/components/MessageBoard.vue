@@ -1,11 +1,15 @@
 <template>
   <div>
-    <h1>message-board</h1>
-    <ul>
-      <li id="messages" v-for="message in listOfMessages">
-        <message v-bind:username="message.username" v-bind:timestamp="message.timestamp" v-bind:msg="message.msg"></message>
-      </li>
-    </ul>
+    <md-card>
+      <md-card-area md-inset>
+        <div class="md-title">Message Board</div>
+        <ul>
+          <li id="messages" v-for="message in listOfMessages">
+            <message v-bind:username="message.username" v-bind:timestamp="message.timestamp" v-bind:msg="message.msg"></message>
+          </li>
+        </ul>
+      </md-card-area>
+    </md-card>
   </div>
 </template>
 
@@ -42,7 +46,7 @@ export default {
   list-style: none;
 }
 #messages{
-  list-style: none; 
+  list-style: none;
 }
 
 
