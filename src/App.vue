@@ -1,5 +1,5 @@
 <template>
-  <p>hello</p>ß
+  <p>hello</p>
 </template>
 
 <script>
