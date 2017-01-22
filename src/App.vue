@@ -1,8 +1,7 @@
 <template>
   <div>
     <input-form></input-form>
-    <login-button></login-button>
-</div>
+  </div>
 </template>
 
 <script>
