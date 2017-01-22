@@ -1,10 +1,7 @@
 <template>
   <div>
-    <input-form></input-form>
-
     <md-button @click="onClick">Login</md-button>
-
-</div>
+  </div>
 </template>
 
 <script>
