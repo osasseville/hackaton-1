@@ -1,42 +1,33 @@
-<template>
-  <div v-if="loaded">
-    <md-button v-show="!isLogin" class="md-raised md-primary" @click="onClickLogin">
-      Login
-    </md-button>
-    <md-button v-show="isLogin" class="md-raised md-warn" @click="onClickLogout">
-      Logout
-    </md-button>
-  </div>
+<template lang="html">
+  <md-button v-if="!user" @click="onClickLogin">Login</md-button>
+  <md-button v-else @click="onClickLogout">Logout</md-button>
 </template>
+
 <script>
-import firebase from 'firebase'
-import { login as loginFb } from '../db'
+import { login, logout } from '../db'
+
 export default {
   data () {
     return {
-      loaded: false,
-      isLogin: false
+      user: null
     }
   },
   methods: {
     onClickLogin () {
-      loginFb()
+      login().then(x => {
+        this.user = x
+        this.$emit('login', x)
+      })
     },
     onClickLogout () {
-      firebase.auth().signOut()
-      this.$emit('logout')
+      logout().then(x => {
+        this.user = null
+        this.$emit('logout')
+      })
     }
-  },
-  mounted () {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        this.isLogin = true
-        this.$emit('login', user)
-      } else {
-        this.isLogin = false
-      }
-      this.loaded = true
-    })
   }
 }
 </script>
+
+<style lang="css">
+</style>
