@@ -2,23 +2,28 @@
   <div>
     <input-form></input-form>
 
-
-
-  <md-list class="custom-list md-triple-line">
-    <md-list-item>
-    <md-avatar>
-      <img src="https://placeimg.com/40/40/people/1" alt="People">
-    </md-avatar>
-
-
+    <md-button @click="onClick">Login</md-button>
 
 </div>
 </template>
 
 <script>
   import InputForm from './components/InputForm'
+  import { login } from './db'
   export default {
     name: 'app',
+    data () {
+      return {
+        user: null
+      }
+    },
+    methods: {
+      onClick () {
+        login().then(x => {
+          this.user = x
+        })
+      }
+    },
     components: {
       InputForm
     }

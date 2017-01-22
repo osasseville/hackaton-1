@@ -33,7 +33,6 @@
       </form>
 
       <event-list
-        thing="noo"
         :newEventName="eventName"
         :newDate="date"
         :newStartTime="startTime"
