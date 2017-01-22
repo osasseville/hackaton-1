@@ -1,13 +1,14 @@
 import firebase from 'firebase'
 
-const config = {
-  apiKey: 'AIzaSyAUmzM1srcqlBsTPx-OiORf2d2pihBoU58',
-  authDomain: 'hackaton-1.firebaseapp.com',
-  databaseURL: 'https://hackaton-1.firebaseio.com',
-  storageBucket: 'hackaton-1.appspot.com',
-  messagingSenderId: '1082056479634'
+var config = {
+  apiKey: 'AIzaSyBUBlF_4lvilWfHXRDv2x5uUx_l71zZ3MU',
+  authDomain: 'conuhacks2017.firebaseapp.com',
+  databaseURL: 'https://conuhacks2017.firebaseio.com',
+  storageBucket: 'conuhacks2017.appspot.com',
+  messagingSenderId: '411746442942'
 }
 firebase.initializeApp(config)
+
 const provider = new firebase.auth.FacebookAuthProvider()
 const db = firebase.database()
 

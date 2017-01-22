@@ -1,16 +1,19 @@
 <template>
   <div class="inputForm">
-    <div class="md-list-text-container">
-      <p>
-        {{ newEventName }}
-      </br>
-        {{ newDate }}
-      </br>
-        {{ newStartTime }} -- {{ newEndTime }}
-      </br>
-      </p>
 
-    </div>
+    <md-list-item>
+      <div class="md-list-text-container">
+        <p>
+          {{ newEventName }}
+        </br>
+          {{ newDate }}
+        </br>
+          {{ newStartTime }} - {{ newEndTime }}
+        </br>
+        </p>
+
+      </div>
+    </md-list-item>
   </div>
 
 </template>
@@ -19,7 +22,6 @@
 export default {
   name: 'eventList',
   props: [
-    'thing',
     'newEventName',
     'newDate',
     'newStartTime',
